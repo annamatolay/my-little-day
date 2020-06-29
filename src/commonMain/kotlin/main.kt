@@ -22,7 +22,7 @@ object GameModule : Module() {
 	override val size: SizeInt = SizeInt(1240, 860)
 //	override val size: SizeInt = SizeInt(1440, 900)
 	override val bgcolor = Colors.BLACK
-//	override val icon = ""
+	override val icon = "icon.png"
 
 	override suspend fun init(injector: AsyncInjector): Unit =
 			injector.run {

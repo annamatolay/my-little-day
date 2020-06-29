@@ -5,7 +5,6 @@ import com.matolaygames.common.GameState
 import com.matolaygames.model.Character
 import com.matolaygames.model.Kid
 import com.matolaygames.model.create
-import com.matolaygames.util.navigateToMenu
 import com.matolaygames.util.showMenuListener
 import com.soywiz.korau.sound.NativeSound
 import com.soywiz.korev.Key
@@ -62,9 +61,12 @@ class IntroScene(override val music: NativeSound) : BaseScene() {
                         }
                 ),
                 createText("ANYWAYS, IF YOU PRESS [SPACE]", alignment = Alignment.Left),
-                createText("IN THE SAME TIME LIKE YOUR RHYTHM OF YOU HEART", alignment = Alignment.Left, position = Pair(x + 1 * 4, y)),
-                createText("OR FOLLOW THE RHYTHM OF THIS COOL SONG", alignment = Alignment.Left, position = Pair(x + 2 * 4, y)),
-                createText("THEN I THINK IT'S MORE FUN", alignment = Alignment.Left, position = Pair(x + 3 * 4, y)),
+                createText(
+                        "IN THE SAME TIME LIKE YOUR RHYTHM OF YOU HEART",
+                        alignment = Alignment.Left,
+                        position = Pair(48.0, 48.0)),
+                createText("OR FOLLOW THE RHYTHM OF THIS COOL SONG"),
+                createText("THEN I THINK IT'S MORE FUN", alignment = Alignment.Left, position = Pair(24.0, 14.0)),
                 createText("YOU'RE DOING GOOD, BY THE WAY"),
                 createText("JUST A FEW MORE [SPACE] LEFT"),
                 createText("ONE MORE [SPACE] TO START THE GAME"),
@@ -131,9 +133,9 @@ class IntroScene(override val music: NativeSound) : BaseScene() {
                                 lookAroundInstruction.visible = false
                                 startCinematicInstruction.visible = true
                             } else if (spaceCounter > instructions.size) {
-                                startCinematicInstruction.visible = false
+//                                startCinematicInstruction.visible = false TODO
                             } else if (startCinematicInstruction.visible) {
-                                sceneContainer.navigateToMenu()
+//                                sceneContainer.navigateToMenu()FIXME
                             } else {
                                 if (spaceCounter > -1 && spaceCounter < instructions.size)
                                     instructions[spaceCounter].visible = true
